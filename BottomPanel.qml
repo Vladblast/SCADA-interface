@@ -41,6 +41,12 @@ Rectangle {
         id: time
     }
 
+     LibOfInt.CloseB {
+         id: close
+         anchors.left: time.right
+         anchors.leftMargin: 20
+     }
+
     Row{
         spacing: 3
         x:bottomPanel.width-180

@@ -6,12 +6,12 @@ import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
 import "./Lines" as Lines
-import "./LibOfInterface" as LibOfInt
+
 import "./Frame2"  as Frame2
 
 Item {
     id:src
-   LibOfInt.BackgroundMain{
+   BackgroundMain{
    }
 
    Text{

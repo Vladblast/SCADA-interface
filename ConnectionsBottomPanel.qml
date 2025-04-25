@@ -59,5 +59,12 @@ Item{
         }
         enabled: workable
     }
+
+    Connections{
+        target:close
+        onClicked:{
+            main.close()
+        }
+    }
  }
 }

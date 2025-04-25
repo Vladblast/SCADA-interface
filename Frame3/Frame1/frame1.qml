@@ -41,7 +41,7 @@ Item {
             anchors.leftMargin: 50
         }
 
-        Frame1.Sign {
+        Sign {
             id: sign
             anchors.right: parent.left
             anchors.rightMargin: 5
@@ -66,7 +66,7 @@ Item {
         }
 
 
-        Frame1.Sign {
+        Sign {
             id: sign1
             anchors.right: parent.left
             anchors.rightMargin: 5
@@ -91,7 +91,7 @@ Item {
         }
 
 
-        Frame1.Sign {
+        Sign {
             id: sign2
             anchors.right: parent.left
             anchors.rightMargin: 5
@@ -125,20 +125,9 @@ Item {
           anchors.left: parent.right
           anchors.top: parent.top
           anchors.topMargin: 21
-
-          Frame1.Pointer{
-              id:pointer1
-              anchors.left: parent.right
-              anchors.bottom: parent.bottom
-              anchors.bottomMargin: -16
-
-              Text{
-                  text: "1002"
-                  anchors.centerIn: parent
-              }
       }
   }
-}
+
   Frame1.Sum{
       id:sum2
       x:600
@@ -158,20 +147,9 @@ Item {
           anchors.left: parent.right
           anchors.top: parent.top
           anchors.topMargin: 21
-
-          Frame1.Pointer{
-              id:pointer2
-              anchors.left: parent.right
-              anchors.bottom: parent.bottom
-               anchors.bottomMargin: -16
-
-              Text{
-                  text: "1002"
-                  anchors.centerIn: parent
-              }
      }
   }
-}
+
   Frame1.Sum{
       id:sum3
       x:600
@@ -191,29 +169,10 @@ Item {
           anchors.left: parent.right
           anchors.top: parent.top
           anchors.topMargin: 21
-
-          Frame1.Pointer{
-              id:pointer3
-              anchors.left: parent.right
-              anchors.bottom: parent.bottom
-               anchors.bottomMargin: -16
-
-              Text{
-                  text: "1002"
-                  anchors.centerIn: parent
-              }
-          }
       }
   }
-
-  Frame1.Stok{
-      id:stok
-      x:600
-      y:70
-  }
-
   Frame1.StokSystem {
-      id: stoks
+      id: stok
       x: 600
       y: 70
   }

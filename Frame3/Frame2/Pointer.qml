@@ -5,14 +5,11 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
-import "./Lines" as Lines
 
 Shape {
     id:pointer
     width: 100; height: 40
-    property string link1:"../frame1.qml"
-    property string link2:""
-
+    property string link:"frame1.qml"
         ShapePath{
             fillColor: "#dbd8d5"
             startX: 0;startY: 0
@@ -27,8 +24,8 @@ Shape {
         MouseArea{
             id:touch
             anchors.fill: parent
-            onClicked: {first.source = link1
-            second.source =link2}
+            onClicked: {first.source = link
+            second.source = ""}
 
         }
 

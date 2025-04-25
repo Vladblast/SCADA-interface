@@ -19,7 +19,7 @@ Item {
 
     Text{
         text:"Проверка значений и заливка воды"
-        font.pixelSize: 20
+        font.pixelSize: 25
         x:parent.width/3
         y:10
     }
@@ -29,7 +29,7 @@ Item {
         spacing:70
 
 
-    Pointer {
+    Frame2.Pointer {
         id: pointer1
         Text{
             anchors.centerIn: parent
@@ -42,6 +42,8 @@ Item {
             anchors.top: parent.top
             anchors.topMargin: 18
         }
+
+
         Frame2.TempDatch {
             id: tempDatch1
             anchors.bottom: hline1.top
@@ -64,7 +66,7 @@ Item {
             anchors.left: tempDatch1.left
             anchors.leftMargin: -15
         }
-        Sign{
+        Frame2.Sign{
             anchors.right: textOfTemp1.left
             anchors.bottom: textOfTemp1.bottom
             anchors.rightMargin: 5
@@ -116,7 +118,7 @@ Item {
             anchors.left: datPres1.left
             anchors.leftMargin: -10
         }
-        Sign{
+        Frame2.Sign{
             anchors.right: textOfPres1.left
             anchors.bottom: textOfPres1.bottom
             anchors.rightMargin: 5
@@ -201,7 +203,7 @@ Item {
 
     }
 
-    Pointer{
+    Frame2.Pointer{
         id:pointer2
         Text{
             anchors.centerIn: parent
@@ -236,7 +238,7 @@ Item {
             anchors.left: tempDatch2.left
             anchors.leftMargin: -15
         }
-        Sign{
+        Frame2.Sign{
             anchors.right: textOfTemp2.left
             anchors.bottom: textOfTemp2.bottom
             anchors.rightMargin: 5
@@ -287,7 +289,7 @@ Item {
             anchors.left: datPres2.left
             anchors.leftMargin: -10
         }
-        Sign{
+        Frame2.Sign{
             anchors.right: textOfPres2.left
             anchors.bottom: textOfPres2.bottom
             anchors.rightMargin: 5
@@ -318,7 +320,7 @@ Item {
 
     }
 
-    Pointer{
+    Frame2.Pointer{
         id:pointer3
         Text{
             anchors.centerIn: parent
@@ -354,7 +356,7 @@ Item {
             anchors.leftMargin: -15
         }
 
-        Sign{
+        Frame2.Sign{
             anchors.right: textOfTemp3.left
             anchors.bottom: textOfTemp3.bottom
             anchors.rightMargin: 5
@@ -406,7 +408,7 @@ Item {
             anchors.left: datPres3.left
             anchors.leftMargin: -10
         }
-        Sign{
+        Frame2.Sign{
             anchors.right: textOfPres3.left
             anchors.bottom: textOfPres3.bottom
             anchors.rightMargin: 5

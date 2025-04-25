@@ -10,8 +10,8 @@ import "./Lines" as Lines
 Shape {
     id:pointer
     width: 100; height: 40
-    property string link1:"../frame1.qml"
-    property string link2:""
+    property string link1:""
+    property string link2:"../frame2.qml"
 
         ShapePath{
             fillColor: "#dbd8d5"

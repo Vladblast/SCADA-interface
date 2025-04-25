@@ -5,12 +5,10 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
-import "./LibOfInterface" as LibOfInt
-
 Shape{
     id:btn
-    width:100
-    height: 100
+    width:150
+    height: 30
 
     property string link:""
 
@@ -37,10 +35,10 @@ Shape{
         id:touch 
         anchors.fill: parent
         onClicked: {
-            fourth.source = link
+            fifth.source = link
             first.source = ""
             second.source = ""
-            third.source = ""
+            //third.source = ""
         }
     }
 }

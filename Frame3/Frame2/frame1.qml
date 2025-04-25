@@ -5,9 +5,7 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
-import "./LibOfInterface" as LibOfInt
-import "./Lines" as Lines
-import "./Frame1" as Frame1
+
 
 //кадр значений
 Item {
@@ -41,7 +39,7 @@ Item {
             anchors.leftMargin: 50
         }
 
-        Frame1.Sign {
+        Sign {
             id: sign
             anchors.right: parent.left
             anchors.rightMargin: 5
@@ -66,7 +64,7 @@ Item {
         }
 
 
-        Frame1.Sign {
+        Sign {
             id: sign1
             anchors.right: parent.left
             anchors.rightMargin: 5
@@ -91,7 +89,7 @@ Item {
         }
 
 
-        Frame1.Sign {
+        Sign {
             id: sign2
             anchors.right: parent.left
             anchors.rightMargin: 5
@@ -125,20 +123,9 @@ Item {
           anchors.left: parent.right
           anchors.top: parent.top
           anchors.topMargin: 21
-
-          Frame1.Pointer{
-              id:pointer1
-              anchors.left: parent.right
-              anchors.bottom: parent.bottom
-              anchors.bottomMargin: -16
-
-              Text{
-                  text: "1002"
-                  anchors.centerIn: parent
-              }
       }
   }
-}
+
   Frame1.Sum{
       id:sum2
       x:600
@@ -158,20 +145,9 @@ Item {
           anchors.left: parent.right
           anchors.top: parent.top
           anchors.topMargin: 21
-
-          Frame1.Pointer{
-              id:pointer2
-              anchors.left: parent.right
-              anchors.bottom: parent.bottom
-               anchors.bottomMargin: -16
-
-              Text{
-                  text: "1002"
-                  anchors.centerIn: parent
-              }
      }
   }
-}
+
   Frame1.Sum{
       id:sum3
       x:600
@@ -191,30 +167,100 @@ Item {
           anchors.left: parent.right
           anchors.top: parent.top
           anchors.topMargin: 21
+      }
+  }
+  Frame1.Stok {
+      x:600
+      y:70
+      id: stok
+      height:50
 
-          Frame1.Pointer{
-              id:pointer3
-              anchors.left: parent.right
-              anchors.bottom: parent.bottom
-               anchors.bottomMargin: -16
+      Text{
+          text: "Сток"
+          anchors.bottom: parent.top
+          anchors.left: parent.left
+          anchors.leftMargin: 30
+      }
+      Lines.Vline {
+          id: vline1
+          height: 60
+          anchors{
+              top: stok.bottom
+              left: stok.left
+              leftMargin: 48
+          }
 
-              Text{
-                  text: "1002"
-                  anchors.centerIn: parent
+      }
+      Lines.HLine{
+          id:hline
+          width:100
+          anchors.left: vline1.right
+          anchors.bottom: vline1.bottom
+          anchors.bottomMargin: 10
+
+          Lines.Vline{
+              height:30
+              anchors.left: hline.right
+              anchors.top: hline.top
+
+
+              Lines.VBridge {
+                  id: vBridge
+                  anchors.top: parent.bottom
+
+                  Lines.Vline{
+                      id:vline2
+                      height:60
+                      anchors.top: vBridge.bottom
+
+                      Lines.HLine{
+                          id:hline4
+                          width:100
+                          anchors.top: vline2.bottom
+                          anchors.right: vline2.right
+
+                          Lines.Vline{
+                              id:vline3
+                              height:74
+                              anchors.top: hline4.top
+                              anchors.right: hline4.left
+                          }
+
+                          Lines.Vline{
+                              id:vline4
+                              height:86
+                              anchors.top: hline4.bottom
+                              anchors.right: hline4.right
+
+                              Lines.VBridge {
+                                  id: vBridge1
+                                  anchors.top: parent.bottom
+
+                                  Lines.Vline{
+                                      id:vline5
+                                      height:60
+                                      anchors.top: vBridge1.bottom
+
+                                      Lines.HLine{
+                                          id:hline5
+                                          width:100
+                                          anchors.top: vline5.bottom
+                                          anchors.right: vline5.right
+
+                                          Lines.Vline{
+                                              id:vline6
+                                              height:74
+                                              anchors.top: hline5.top
+                                              anchors.right: hline5.left
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
               }
           }
       }
-  }
-
-  Frame1.Stok{
-      id:stok
-      x:600
-      y:70
-  }
-
-  Frame1.StokSystem {
-      id: stoks
-      x: 600
-      y: 70
   }
 }
