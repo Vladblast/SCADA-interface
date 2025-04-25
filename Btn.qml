@@ -38,7 +38,7 @@ Shape{
         anchors.fill: parent
         onClicked: {
             fourth.source = link
-            thirst.source = ""
+            first.source = ""
             second.source = ""
             third.source = ""
         }
