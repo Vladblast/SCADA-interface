@@ -1,0 +1,76 @@
+
+# Build artifacts
+/build/
+/debug/
+/release/
+/dist/
+/deploy/
+
+# Executables
+*.exe
+*.app
+*.dmg
+
+# Temporary files
+*~
+\#*#
+*.swp
+
+# Personal settings
+.DS_Store
+
+# Cache files
+/.qmake.stash
+/.qbs/
+
+# Qt VS Tools
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.prefs
+
+# CodeLite project
+*.workspace
+
+# Other IDEs
+/.idea/
+/.vscode/
+
+# Binary files
+*.elf
+*.hex
+
+# Qt Quick Compiler cache
+/qmlcache/
+
+# Qt deployment
+/deploy/
+
+# Qt Resource Compiler cache
+*.rcc.lock
+
+# Qt Quick Designer backup files
+*.~qml
+
+# Qt Linguist files
+*.ts.autosave
+
+# CMake
+CMakeLists.txt.user*
+build/
+_build/
+*.cmake
+*.cmake.in
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles/
+
+# Cppcheck files
+cppcheck-suppressions.txt
+cppcheck-html-report.html
+
+# Qbs
+.qbs/
+
+# Clang tools
+.clang-format
+.clang-tidy
