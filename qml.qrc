@@ -17,7 +17,6 @@
         <file>LibOfInterface/Stat.qml</file>
         <file>LibOfInterface/Time.qml</file>
         <file>BottomPanel.qml</file>
-        <file>Info.qml</file>
         <file>Lines/HLine.qml</file>
         <file>Lines/VBridge.qml</file>
         <file>Lines/Vline.qml</file>
