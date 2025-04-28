@@ -9,6 +9,9 @@ import "./LibOfInterface" as LibOfInt
 import "./Lines" as Lines
 import "./Frame1" as Frame1
 
+import Generators 1.0
+
+
 //кадр значений
 Item {
     id:frame1
@@ -16,11 +19,21 @@ Item {
     property int windowCount:0
 
 
+
     LibOfInt.BackgroundMain{
     }
 
+    Button{
+        id:btn
+        anchors.bottom: parent.bottom
+        onClicked: {GeneratorManager.generator1.startTimer()
+            GeneratorManager.generator2.startTimer()
+            GeneratorManager.generator3.startTimer()
+        }
+    }
+
     Text{
-        text: "Значения"
+        text: "Значения"+tank1.volume
         x:350
         y:10
         height: 20
@@ -33,6 +46,7 @@ Item {
       spacing:70
     Frame1.Tank {
         id: tank1
+        volume: GeneratorManager.generator1.randomValue
 
         Text{
             text: "Бак"
@@ -57,6 +71,7 @@ Item {
     }
     Frame1.Tank{
         id:tank2
+        volume:GeneratorManager.generator2.randomValue
 
         Text{
             text: "Бак"
@@ -82,6 +97,7 @@ Item {
 
     Frame1.Tank{
         id:tank3
+        volume:GeneratorManager.generator3.randomValue
 
         Text{
             text: "Бак"

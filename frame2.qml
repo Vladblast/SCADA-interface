@@ -8,6 +8,8 @@ import QtQuick.Layouts 1.15
 import "./LibOfInterface" as LibOfInt
 import "./Lines" as Lines
 import "./Frame2" as Frame2
+import Generators 1.0
+import Level 1.0
 
 Item {
     id:frame2
@@ -44,8 +46,9 @@ Item {
         }
 
 
-        Frame2.TempDatch {
-            id: tempDatch1
+        Frame2.TempVol {
+            id: tempVol1
+            star:false
             anchors.bottom: hline1.top
             anchors.left: hline1.right
             anchors.leftMargin: -20
@@ -53,22 +56,45 @@ Item {
             yy:x-100
 
             Text{
-                text: "Датчик Температуры"
+                text: "Уровнемер"
                 anchors.top: parent.bottom
                 anchors.topMargin: 4
                 anchors.left: parent.left
                 anchors.leftMargin: -50
             }
+
+            Connections{
+                target: GeneratorManager.generator1
+                onRandomValueChanged:{
+                    if(GeneratorManager.generator1.randomValue > 20){
+                        tempVol1.star = true
+                    }
+                    else
+                        tempVol1.star = false
+
+                }
+            }
+
+            Connections{
+                target: second
+                onLoaded:{ if(GeneratorManager.generator1.randomValue > 20){
+                        tempVol1.star = true
+                    }
+                    else
+                        tempVol1.star = false
+            }
         }
-        Frame2.TextOfTemp{
-            id:textOfTemp1
-            anchors.bottom: tempDatch1.top
-            anchors.left: tempDatch1.left
+        }
+        Frame2.TextOfVol{
+            id:textOfVol1
+            anchors.bottom: tempVol1.top
+            anchors.left: tempVol1.left
             anchors.leftMargin: -15
+            word :GeneratorManager.generator1.randomValue
         }
         Frame2.Sign{
-            anchors.right: textOfTemp1.left
-            anchors.bottom: textOfTemp1.bottom
+            anchors.right: textOfVol1.left
+            anchors.bottom: textOfVol1.bottom
             anchors.rightMargin: 5
         }
 
@@ -111,12 +137,54 @@ Item {
                 anchors.left: parent.left
                 anchors.leftMargin: -30
             }
+
+            Connections{
+                target: GeneratorManager.generator1
+                onRandomValueChanged:{
+                    var pressure = (293*1000)/(GeneratorManager.generator1.randomValue+3)
+                    var p = pressure.toFixed(2)
+                    textOfPres1.word = p
+                    if(p > 48800){
+                        datPres1.star = true
+                        key1.rotation = 150
+                         key1.anchors.topMargin = -10
+                    }
+                    else{
+                        datPres1.star = false
+                        key1.rotation = 180
+                        key1.anchors.topMargin = 0
+
+                    }
+                }
+            }
+
+            Connections{
+                target: second
+                onLoaded:{
+                     var pressure = (293*1000)/(GeneratorManager.generator1.randomValue)
+                    var p = pressure.toFixed(2)
+                    textOfPres1.word = p
+                    if(p > 48800){
+                        datPres1.star = true
+                        key1.rotation = 150
+                         key1.anchors.topMargin = -10
+                    }
+                    else{
+                        datPres1.star = false
+                        key1.rotation = 180
+                        key1.anchors.topMargin = 0
+
+                    }
+
+                }
+            }
         }
         Frame2.TextOfPres {
             id: textOfPres1
             anchors.bottom: datPres1.top
             anchors.left: datPres1.left
             anchors.leftMargin: -10
+
         }
         Frame2.Sign{
             anchors.right: textOfPres1.left
@@ -197,6 +265,21 @@ Item {
                 anchors.right: parent.left
                 anchors.top: parent.top
                 anchors.rightMargin: 60
+
+                Level{
+                    id:level1
+                }
+
+            }
+
+            Connections{
+                target: GeneratorManager.generator1
+                onRandomValueChanged:{
+                    level.vheight=0.4*level1.sumlevel(GeneratorManager.generator1.randomValue+3,GeneratorManager.generator2.randomValue+3,GeneratorManager.generator3.randomValue+3)
+                    if(level.vheight ==200){
+                        level.vheight = 1
+                    }
+                }
             }
         }
 
@@ -216,8 +299,8 @@ Item {
             anchors.top: parent.top
             anchors.topMargin: 18
         }
-        Frame2.TempDatch {
-            id: tempDatch2
+        Frame2.TempVol{
+            id: tempVol2
             anchors.bottom: hline2.top
             anchors.left: hline2.right
             anchors.leftMargin: -20
@@ -225,22 +308,44 @@ Item {
             yy:x
 
             Text{
-                text: "Датчик Температуры"
+                text: "Уровнемер"
                 anchors.top: parent.bottom
                 anchors.topMargin: 4
                 anchors.left: parent.left
                 anchors.leftMargin: -50
             }
+
+            Connections{
+                target: GeneratorManager.generator2
+                onRandomValueChanged:{
+                    if(GeneratorManager.generator2.randomValue > 20){
+                        tempVol2.star = true
+                    }
+                    else
+                        tempVol2.star = false
+                }
+            }
+
+            Connections{
+                target: second
+                onLoaded:{ if(GeneratorManager.generator2.randomValue > 20){
+                        tempVol2.star = true
+                    }
+                    else
+                        tempVol3.star = false
+            }
         }
-        Frame2.TextOfTemp{
-            id:textOfTemp2
-            anchors.bottom: tempDatch2.top
-            anchors.left: tempDatch2.left
+        }
+        Frame2.TextOfVol{
+            id:textOfVol2
+            anchors.bottom: tempVol2.top
+            anchors.left: tempVol2.left
             anchors.leftMargin: -15
+             word :GeneratorManager.generator2.randomValue
         }
         Frame2.Sign{
-            anchors.right: textOfTemp2.left
-            anchors.bottom: textOfTemp2.bottom
+            anchors.right: textOfVol2.left
+            anchors.bottom: textOfVol2.bottom
             anchors.rightMargin: 5
         }
         Lines.HLine{
@@ -333,8 +438,8 @@ Item {
             anchors.top: parent.top
             anchors.topMargin: 18
         }
-        Frame2.TempDatch {
-            id: tempDatch3
+        Frame2.TempVol{
+            id: tempVol3
             anchors.bottom: hline3.top
             anchors.left: hline3.right
             anchors.leftMargin: -20
@@ -342,23 +447,47 @@ Item {
             yy:x+100
 
             Text{
-                text: "Датчик Температуры"
+                text: "Уровнемер"
                 anchors.top: parent.bottom
                 anchors.topMargin: 4
                 anchors.left: parent.left
                 anchors.leftMargin: -50
             }
+
+            Connections{
+                target: GeneratorManager.generator3
+                onRandomValueChanged:{
+                    if(GeneratorManager.generator3.randomValue > 20){
+                        tempVol3.star = true
+                    }
+                    else
+                        tempVol3.star = false
+
+                }
+            }
+
+            Connections{
+                target: second
+                onLoaded:{ if(GeneratorManager.generator3.randomValue > 20){
+                        console.log(1)
+                        tempVol3.star = true
+                    }
+                    else
+                        tempVol3.star = false
+            }
         }
-        Frame2.TextOfTemp{
-            id:textOfTemp3
-            anchors.bottom: tempDatch3.top
-            anchors.left: tempDatch3.left
+    }
+        Frame2.TextOfVol{
+            id:textOfVol3
+            anchors.bottom: tempVol3.top
+            anchors.left: tempVol3.left
             anchors.leftMargin: -15
+             word :GeneratorManager.generator3.randomValue
         }
 
         Frame2.Sign{
-            anchors.right: textOfTemp3.left
-            anchors.bottom: textOfTemp3.bottom
+            anchors.right: textOfVol3.left
+            anchors.bottom: textOfVol3.bottom
             anchors.rightMargin: 5
         }
 

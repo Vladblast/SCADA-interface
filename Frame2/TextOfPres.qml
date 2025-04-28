@@ -8,6 +8,7 @@ import QtQuick.Layouts 1.15
 
 Row{
     id:textOfPres
+    property string word:"0.0"
 
     TextField{
         width:20
@@ -20,11 +21,11 @@ Row{
         }
     }
     TextField{
-        width:50
+        width:100
         id:valueView
         readOnly: true
         color: "white"
-        text: "0.0"
+        text: word
         background: Rectangle{
             anchors.fill: parent
             color: "black"

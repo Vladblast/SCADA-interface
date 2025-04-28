@@ -12,6 +12,7 @@ Rectangle{
     width:50
     radius:height/2
     color: "grey"
+    property bool star:false
 
     property int xx:0
     property int yy:0
@@ -21,7 +22,13 @@ Rectangle{
         ColorAnimation  {to: "red" ; duration:1500}
         ColorAnimation{ to: "grey"; duration: 1500}
         loops: Animation.Infinite
-        running: false
+        running: star
+
+        onRunningChanged: {
+            if(!running){
+                datPres.color = "grey"
+            }
+        }
     }
 
     MouseArea{

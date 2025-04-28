@@ -5,6 +5,8 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
+import "../Frame1" as Frame1
+
 
 Rectangle{
     id:datPres
@@ -28,7 +30,7 @@ Rectangle{
         }
 
 
-    Info{
+    Frame1.Info{
         id:info
     }
 

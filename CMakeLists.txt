@@ -19,6 +19,10 @@ set(PROJECT_SOURCES
         main.cpp
         qml.qrc
         DataStore.h DataStore.cpp
+        randomgenerator.h randomgenerator.cpp
+        randomgeneratormanager.h
+        level.h level.cpp
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

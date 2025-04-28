@@ -5,7 +5,6 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
-import "./Lines" as Lines
 
 
 

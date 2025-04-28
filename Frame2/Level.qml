@@ -11,6 +11,7 @@ Rectangle{
     width:15
     border.color: "black"
     color: "transparent"
+    property double vheight:1
 
     Rectangle{
         id:levelc
@@ -20,8 +21,8 @@ Rectangle{
         anchors.bottomMargin: 1
         color: "grey"
         width:13
-        height:1
-        SequentialAnimation on height{
+        height:vheight
+     /*   SequentialAnimation on height{
         PropertyAnimation {
             to:parent.height
             duration: 2000
@@ -33,6 +34,6 @@ Rectangle{
         }
         loops:Animation.Infinite
 
-    }
+    }*/
     }
 }

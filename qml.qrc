@@ -35,86 +35,28 @@
         <file>Frame2/Cylinder.qml</file>
         <file>Frame2/DatPres.qml</file>
         <file>Frame2/Level.qml</file>
-        <file>Frame2/TempDatch.qml</file>
+        <file>Frame2/TempVol.qml</file>
         <file>Frame2/TextOfPres.qml</file>
-        <file>Frame2/TextOfTemp.qml</file>
+        <file>Frame2/TextOfVol.qml</file>
         <file>Frame2/BackgroundMain.qml</file>
         <file>Frame2/Info.qml</file>
-        <file>Frame1/Lines/HLine.qml</file>
-        <file>Frame1/Lines/Key.qml</file>
-        <file>Frame1/Lines/Tire.qml</file>
-        <file>Frame1/Lines/VBridge.qml</file>
-        <file>Frame1/Lines/Vline.qml</file>
         <file>Frame1/StokSystem.qml</file>
         <file>Frame2/Sign.qml</file>
         <file>2001.qml</file>
         <file>Frame1/Octagon.qml</file>
         <file>Frame1/TextOfOc.qml</file>
         <file>Frame1/Stok1.qml</file>
-        <file>Frame2/Lines/HLine.qml</file>
-        <file>Frame2/Lines/Key.qml</file>
-        <file>Frame2/Lines/Tire.qml</file>
-        <file>Frame2/Lines/VBridge.qml</file>
-        <file>Frame2/Lines/Vline.qml</file>
         <file>Frame2/Stok1.qml</file>
         <file>Frame2/Tvr.qml</file>
         <file>Frame2/CoolSin.qml</file>
         <file>LibOfInterface/CloseB.qml</file>
-        <file>Frame3/2001.qml</file>
-        <file>Frame3/2002.qml</file>
         <file>Frame3/Btn.qml</file>
         <file>Frame3/DatPres.qml</file>
         <file>Frame3/Pressure.qml</file>
-        <file>Frame3/Sign.qml</file>
-        <file>Frame3/Temp.qml</file>
-        <file>Frame3/TempDatch.qml</file>
-        <file>Frame3/Info.qml</file>
-        <file>Frame3/BackgroundMain.qml</file>
-        <file>Frame3/Octagon.qml</file>
-        <file>Frame3/Frame1/Lines/HLine.qml</file>
-        <file>Frame3/Frame1/Lines/Key.qml</file>
-        <file>Frame3/Frame1/Lines/Tire.qml</file>
-        <file>Frame3/Frame1/Lines/VBridge.qml</file>
-        <file>Frame3/Frame1/Lines/Vline.qml</file>
-        <file>Frame3/Frame1/2001.qml</file>
-        <file>Frame3/Frame1/BackgroundMain.qml</file>
-        <file>Frame3/Frame1/frame1.qml</file>
-        <file>Frame3/Frame1/Info.qml</file>
-        <file>Frame3/Frame1/Octagon.qml</file>
-        <file>Frame3/Frame1/Sign.qml</file>
-        <file>Frame3/Frame1/Stok.qml</file>
-        <file>Frame3/Frame1/Stok1.qml</file>
-        <file>Frame3/Frame1/StokSystem.qml</file>
-        <file>Frame3/Frame1/Sum.qml</file>
-        <file>Frame3/Frame1/Tank.qml</file>
-        <file>Frame3/Frame1/TextOfOc.qml</file>
-        <file>Frame3/Frame2/Lines/HLine.qml</file>
-        <file>Frame3/Frame2/Lines/Key.qml</file>
-        <file>Frame3/Frame2/Lines/Tire.qml</file>
-        <file>Frame3/Frame2/Lines/VBridge.qml</file>
-        <file>Frame3/Frame2/Lines/Vline.qml</file>
-        <file>Frame3/Frame2/2002.qml</file>
-        <file>Frame3/Frame2/BackgroundMain.qml</file>
-        <file>Frame3/Frame2/Cooler.qml</file>
-        <file>Frame3/Frame2/CoolSin.qml</file>
-        <file>Frame3/Frame2/Cylinder.qml</file>
-        <file>Frame3/Frame2/DatPres.qml</file>
-        <file>Frame3/Frame2/frame1.qml</file>
-        <file>Frame3/Frame2/Info.qml</file>
-        <file>Frame3/Frame2/Level.qml</file>
-        <file>Frame3/Frame2/Pointer.qml</file>
-        <file>Frame3/Frame2/Sign.qml</file>
-        <file>Frame3/Frame2/Stok1.qml</file>
-        <file>Frame3/Frame2/TempDatch.qml</file>
-        <file>Frame3/Frame2/TextOfPres.qml</file>
-        <file>Frame3/Frame2/TextOfTemp.qml</file>
-        <file>Frame3/Frame2/Tvr.qml</file>
-        <file>Frame3/Lines/HLine.qml</file>
-        <file>Frame3/Lines/Key.qml</file>
-        <file>Frame3/Lines/Tire.qml</file>
-        <file>Frame3/Lines/VBridge.qml</file>
-        <file>Frame3/Lines/Vline.qml</file>
+        <file>Frame3/Vol.qml</file>
+        <file>Frame3/VolDatch.qml</file>
         <file>Frame2/Pointer.qml</file>
         <file>Frame1/Pointer.qml</file>
+        <file>Frame1/Frame1.js</file>
     </qresource>
 </RCC>

@@ -5,15 +5,20 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
+import Generators 1.0
+
+
 
 Shape{
     height: 20
     width: 40
-    id:tempDatch
+    id:tempVol
+    property bool star:false
 
     property int xx:0
     property int yy:0
     ShapePath{
+        id:fcolor
         fillColor: "grey"
         strokeWidth: 1
         strokeColor: "grey"
@@ -27,18 +32,24 @@ Shape{
             ColorAnimation  {to: "red" ; duration:1500}
             ColorAnimation{ to: "grey"; duration: 1500}
             loops: Animation.Infinite
-            running: false
+            running: star
+
+            onRunningChanged: {
+                if(!running){
+                    fcolor.fillColor = "grey"
+                }
+            }
         }
     }
 
     MouseArea{
         id:touch
-        anchors.fill: tempDatch
+        anchors.fill: tempVol
         onClicked: {
-            console.log(tempDatch.x)
+            console.log(tempVol.x)
             if(frame2.windowCount < 2){
-            info.x = tempDatch.xx
-            info.y = tempDatch.yy
+            info.x = tempVol.xx
+            info.y = tempVol.yy
             info.show()
                 touch.enabled = false
             frame2.windowCount+=1

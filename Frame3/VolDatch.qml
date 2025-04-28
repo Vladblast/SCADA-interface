@@ -5,11 +5,13 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
+import "../Frame2" as Frame2
+
 
 Shape{
     height: 20
     width: 40
-    id:tempDatch
+    id:volDatch
 
     property int xx:0
     property int yy:0
@@ -25,16 +27,16 @@ Shape{
 
     MouseArea{
         id:touch
-        anchors.fill: tempDatch
+        anchors.fill: volDatch
         onClicked: {
-            info.x = tempDatch.xx-100
-            info.y = tempDatch.yy
+            info.x = volDatch.xx-100
+            info.y = volDatch.yy
             info.show()
                 touch.enabled = false
         }
     }
 
-    Info{
+    Frame2.Info{
         id:info
     }
 

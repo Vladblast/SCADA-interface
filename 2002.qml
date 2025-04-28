@@ -6,12 +6,11 @@ import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
 import "./Lines" as Lines
-import "./LibOfInterface" as LibOfInt
-import "./Frame2"  as Frame2
+import "./Frame2" as Frame2
 
 Item {
     id:src
-   LibOfInt.BackgroundMain{
+   Frame2.BackgroundMain{
    }
 
    Text{
@@ -26,8 +25,13 @@ Item {
         width: 300
         anchors.centerIn: parent
 
-        Frame2.CoolSin {
+        Frame2.CoolSin{
             id: coolsin
+            anchors.left: main.left
+            anchors.bottom: main.bottom
+            anchors.bottomMargin: -20
+            width: 300
+            height: 60
         }
 }
 
@@ -109,6 +113,6 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: -45
         }
-    }
+    }  
 }
 

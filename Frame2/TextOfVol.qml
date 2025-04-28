@@ -6,13 +6,14 @@ import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
 Row{
-    id:textOfTemp
+    id:textOfVol
+    property string word:""
 
     TextField{
         width:20
         readOnly: true
         color: "white"
-        text: "T"
+        text: "V"
         background: Rectangle{
             anchors.fill: parent
             color: "black"
@@ -23,7 +24,8 @@ Row{
         id:valueView
         readOnly: true
         color: "white"
-        text: "0.0"
+        placeholderText: "0.0"
+        text:word
         background: Rectangle{
             anchors.fill: parent
             color: "black"

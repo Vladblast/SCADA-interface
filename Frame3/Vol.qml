@@ -5,17 +5,17 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
-import "./Lines" as Lines
-import "./Frame2" as Frame2
+import "../Lines" as Lines
+import "../Frame2" as Frame2
 
 Item{
-    id:temp
+    id:vol
     x:400
     y:300
-    TempDatch {
-        id: tempDatch1
-        xx:temp.x
-        yy:temp.x-100
+    VolDatch {
+        id: volDatch1
+        xx:vol.x
+        yy:vol.x-100
 
         Text{
             text: "Датчик Температуры"
@@ -25,15 +25,15 @@ Item{
             anchors.leftMargin: -50
         }
     }
-    Frame2.TextOfTemp{
-        id:textOfTemp1
-        anchors.bottom: tempDatch1.top
-        anchors.left: tempDatch1.left
+    Frame2.TextOfVol{
+        id:textOfVol1
+        anchors.bottom: volDatch1.top
+        anchors.left: volDatch1.left
         anchors.leftMargin: -15
     }
-    Sign{
-        anchors.right: textOfTemp1.left
-        anchors.bottom: textOfTemp1.bottom
+    Frame2.Sign{
+        anchors.right: textOfVol1.left
+        anchors.bottom: textOfVol1.bottom
         anchors.rightMargin: 5
     }
 }

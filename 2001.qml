@@ -7,17 +7,15 @@ import QtQuick.Layouts 1.15
 
 import "./Lines" as Lines
 import "./Frame1" as Frame1
-import "./LibOfInterface" as LibOfInt
 
-import dataStore 1.0
 
 
 
 Item {
-    id:src
+
     property int number:0
 
-   LibOfInt.BackgroundMain{
+   Frame1.BackgroundMain{
        id:back
    }
 
@@ -25,7 +23,7 @@ Item {
    Text{
        x:parent.width/2-50
        y:20
-       text: "Сумматор "
+       text: "Сумматор"
        font.pixelSize: 20
    }
 
@@ -54,6 +52,12 @@ Item {
        anchors.right: octagon.left
        anchors.top: octagon.top
        anchors.topMargin: 65
+
+       Text {
+           text: "Вход"
+           anchors.bottom: parent.top
+           anchors.left: parent.left
+       }
    }
 
    Lines.Vline{
@@ -62,6 +66,13 @@ Item {
        anchors.bottom: octagon.top
        anchors.right: octagon.right
        anchors.rightMargin: 65
+
+       Text{
+           text: "1/3C"
+           anchors.bottom: parent.top
+           anchors.left: parent.left
+           anchors.leftMargin: -10
+       }
    }
 
    Lines.HLine{
@@ -70,6 +81,12 @@ Item {
        anchors.left: octagon.right
        anchors.top: octagon.top
        anchors.topMargin: 65
+
+       Text{
+           text:"Выход"
+           anchors.right: parent.right
+           anchors.bottom: parent.top
+       }
    }
 
    Lines.Vline{

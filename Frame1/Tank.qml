@@ -12,8 +12,8 @@ Shape{
     width: 200
     height: 100
 
-    property double volume: 0.0
-    property double temp: 27
+    property int volume: 0.0
+    property int temp: 27
     property double pressure: 0.0
 
  Shape{
@@ -53,15 +53,9 @@ Shape{
             id:input
             Layout.maximumWidth:140
             color: "white"
-            placeholderText: "Введите значение"
-            placeholderTextColor: "white"
+           text: volume
             background: Rectangle{
                 color: "black"
-            }
-            onAccepted: {
-                volume = parseFloat(text)
-                var a = (temp+273)*1000/(volume)
-                pressure = a.toFixed(2)
             }
         }
 

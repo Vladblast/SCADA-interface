@@ -50,7 +50,7 @@ Item {
 
            Frame3.Btn {
                id: btn1
-               link:"2001.qml"
+               link:"../Frame1/2001.qml"
 
                Text{
                    anchors.centerIn: btn1
@@ -60,7 +60,7 @@ Item {
 
            Frame3.Btn{
                id:btn2
-               link:"2002.qml"
+               link:"../Frame2/2002.qml"
 
                Text{
                    anchors.centerIn: btn2
@@ -74,7 +74,7 @@ Item {
 
            Frame3.Btn{
                id:btn3
-               link:"Temp.qml"
+               link:"Pressure.qml"
                Text{
                    anchors.centerIn: parent
                    text: "Датчик давления"
@@ -83,7 +83,7 @@ Item {
 
            Frame3.Btn{
                id:btn4
-               link:"Pressure.qml"
+               link:"Vol.qml"
                Text{
                    anchors.centerIn: parent
                    text: "Датчик температуры"
