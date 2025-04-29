@@ -38,15 +38,11 @@
         <file>Frame2/TempVol.qml</file>
         <file>Frame2/TextOfPres.qml</file>
         <file>Frame2/TextOfVol.qml</file>
-        <file>Frame2/BackgroundMain.qml</file>
-        <file>Frame2/Info.qml</file>
         <file>Frame1/StokSystem.qml</file>
-        <file>Frame2/Sign.qml</file>
         <file>2001.qml</file>
         <file>Frame1/Octagon.qml</file>
         <file>Frame1/TextOfOc.qml</file>
         <file>Frame1/Stok1.qml</file>
-        <file>Frame2/Stok1.qml</file>
         <file>Frame2/Tvr.qml</file>
         <file>Frame2/CoolSin.qml</file>
         <file>LibOfInterface/CloseB.qml</file>
@@ -55,8 +51,9 @@
         <file>Frame3/Pressure.qml</file>
         <file>Frame3/Vol.qml</file>
         <file>Frame3/VolDatch.qml</file>
-        <file>Frame2/Pointer.qml</file>
         <file>Frame1/Pointer.qml</file>
-        <file>Frame1/Frame1.js</file>
+        <file>Frame2/Conlev.qml</file>
+        <file>Frame3/Startbtn.qml</file>
+        <file>Frame3/Stop.qml</file>
     </qresource>
 </RCC>

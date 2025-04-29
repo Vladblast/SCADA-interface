@@ -8,6 +8,9 @@ import QtQuick.Layouts 1.15
 import "./LibOfInterface" as LibOfInt
 import "./Lines" as Lines
 import "./Frame2" as Frame2
+import "./Frame1" as Frame1
+import "./Frame3" as Frame3
+
 import Generators 1.0
 import Level 1.0
 
@@ -17,6 +20,31 @@ Item {
     property int windowCount:0
 
     LibOfInt.BackgroundMain{
+    }
+
+    Frame3.Startbtn {
+        id: start
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 3
+        anchors.left: parent.left
+        anchors.leftMargin: 600
+        onClicked: {GeneratorManager.generator1.startTimer()
+            GeneratorManager.generator2.startTimer()
+            GeneratorManager.generator3.startTimer()
+        }
+    }
+
+    Frame3.Stop {
+        id: stop
+        anchors.left: start.right
+        anchors.leftMargin: 3
+        anchors.bottom: start.bottom
+        onClicked: {
+            GeneratorManager.generator1.stopTimer()
+            GeneratorManager.generator2.stopTimer()
+            GeneratorManager.generator3.stopTimer()
+
+        }
     }
 
     Text{
@@ -31,8 +59,10 @@ Item {
         spacing:70
 
 
-    Frame2.Pointer {
+    Frame1.Pointer {
         id: pointer1
+        link1:"../frame1.qml"
+        link2:""
         Text{
             anchors.centerIn: parent
             text: "1001"
@@ -66,7 +96,7 @@ Item {
             Connections{
                 target: GeneratorManager.generator1
                 onRandomValueChanged:{
-                    if(GeneratorManager.generator1.randomValue > 20){
+                    if(GeneratorManager.generator1.randomValue+3 > 20){
                         tempVol1.star = true
                     }
                     else
@@ -77,7 +107,7 @@ Item {
 
             Connections{
                 target: second
-                onLoaded:{ if(GeneratorManager.generator1.randomValue > 20){
+                onLoaded:{ if(GeneratorManager.generator1.randomValue+3 > 20){
                         tempVol1.star = true
                     }
                     else
@@ -90,9 +120,9 @@ Item {
             anchors.bottom: tempVol1.top
             anchors.left: tempVol1.left
             anchors.leftMargin: -15
-            word :GeneratorManager.generator1.randomValue
+            word :GeneratorManager.generator1.randomValue+3
         }
-        Frame2.Sign{
+        Frame1.Sign{
             anchors.right: textOfVol1.left
             anchors.bottom: textOfVol1.bottom
             anchors.rightMargin: 5
@@ -144,7 +174,7 @@ Item {
                     var pressure = (293*1000)/(GeneratorManager.generator1.randomValue+3)
                     var p = pressure.toFixed(2)
                     textOfPres1.word = p
-                    if(p > 48800){
+                    if(p > 35800){
                         datPres1.star = true
                         key1.rotation = 150
                          key1.anchors.topMargin = -10
@@ -153,7 +183,6 @@ Item {
                         datPres1.star = false
                         key1.rotation = 180
                         key1.anchors.topMargin = 0
-
                     }
                 }
             }
@@ -164,7 +193,7 @@ Item {
                      var pressure = (293*1000)/(GeneratorManager.generator1.randomValue)
                     var p = pressure.toFixed(2)
                     textOfPres1.word = p
-                    if(p > 48800){
+                    if(p > 35800){
                         datPres1.star = true
                         key1.rotation = 150
                          key1.anchors.topMargin = -10
@@ -173,12 +202,11 @@ Item {
                         datPres1.star = false
                         key1.rotation = 180
                         key1.anchors.topMargin = 0
-
                     }
-
                 }
             }
         }
+
         Frame2.TextOfPres {
             id: textOfPres1
             anchors.bottom: datPres1.top
@@ -186,7 +214,7 @@ Item {
             anchors.leftMargin: -10
 
         }
-        Frame2.Sign{
+        Frame1.Sign{
             anchors.right: textOfPres1.left
             anchors.bottom: textOfPres1.bottom
             anchors.rightMargin: 5
@@ -265,28 +293,17 @@ Item {
                 anchors.right: parent.left
                 anchors.top: parent.top
                 anchors.rightMargin: 60
-
-                Level{
-                    id:level1
-                }
-
             }
 
-            Connections{
-                target: GeneratorManager.generator1
-                onRandomValueChanged:{
-                    level.vheight=0.4*level1.sumlevel(GeneratorManager.generator1.randomValue+3,GeneratorManager.generator2.randomValue+3,GeneratorManager.generator3.randomValue+3)
-                    if(level.vheight ==200){
-                        level.vheight = 1
-                    }
-                }
+            Frame2.Conlev {
+                id: conlev
             }
         }
-
-
     }
 
-    Frame2.Pointer{
+    Frame1.Pointer{
+         link1:"../frame1.qml"
+         link2:""
         id:pointer2
         Text{
             anchors.centerIn: parent
@@ -318,7 +335,7 @@ Item {
             Connections{
                 target: GeneratorManager.generator2
                 onRandomValueChanged:{
-                    if(GeneratorManager.generator2.randomValue > 20){
+                    if(GeneratorManager.generator2.randomValue+3 > 20){
                         tempVol2.star = true
                     }
                     else
@@ -328,7 +345,7 @@ Item {
 
             Connections{
                 target: second
-                onLoaded:{ if(GeneratorManager.generator2.randomValue > 20){
+                onLoaded:{ if(GeneratorManager.generator2.randomValue+3 > 20){
                         tempVol2.star = true
                     }
                     else
@@ -341,9 +358,9 @@ Item {
             anchors.bottom: tempVol2.top
             anchors.left: tempVol2.left
             anchors.leftMargin: -15
-             word :GeneratorManager.generator2.randomValue
+             word :GeneratorManager.generator2.randomValue+3
         }
-        Frame2.Sign{
+        Frame1.Sign{
             anchors.right: textOfVol2.left
             anchors.bottom: textOfVol2.bottom
             anchors.rightMargin: 5
@@ -387,14 +404,56 @@ Item {
                 anchors.left: parent.left
                 anchors.leftMargin: -30
             }
+
+            Connections{
+                target: GeneratorManager.generator2
+                onRandomValueChanged:{
+                    var pressure = (293*1000)/(GeneratorManager.generator2.randomValue+3)
+                    var p = pressure.toFixed(2)
+                    textOfPres2.word = p
+                    if(p > 35800){
+                        datPres2.star = true
+                        key2.rotation = 150
+                         key2.anchors.topMargin = -10
+                    }
+                    else{
+                        datPres2.star = false
+                        key2.rotation = 180
+                        key2.anchors.topMargin = 0
+
+                    }
+                }
+            }
+
+            Connections{
+                target: second
+                onLoaded:{
+                     var pressure = (293*1000)/(GeneratorManager.generator2.randomValue)
+                    var p = pressure.toFixed(2)
+                    textOfPres2.word = p
+                    if(p > 35800){
+                        datPres2.star = true
+                        key2.rotation = 150
+                         key2.anchors.topMargin = -10
+                    }
+                    else{
+                        datPres2.star = false
+                        key2.rotation = 180
+                        key2.anchors.topMargin = 0
+
+                    }
+
+                }
+            }
         }
         Frame2.TextOfPres {
             id: textOfPres2
             anchors.bottom: datPres2.top
             anchors.left: datPres2.left
             anchors.leftMargin: -10
+
         }
-        Frame2.Sign{
+        Frame1.Sign{
             anchors.right: textOfPres2.left
             anchors.bottom: textOfPres2.bottom
             anchors.rightMargin: 5
@@ -425,7 +484,9 @@ Item {
 
     }
 
-    Frame2.Pointer{
+    Frame1.Pointer{
+        link1:"../frame1.qml"
+        link2:""
         id:pointer3
         Text{
             anchors.centerIn: parent
@@ -457,7 +518,7 @@ Item {
             Connections{
                 target: GeneratorManager.generator3
                 onRandomValueChanged:{
-                    if(GeneratorManager.generator3.randomValue > 20){
+                    if(GeneratorManager.generator3.randomValue+3 > 20){
                         tempVol3.star = true
                     }
                     else
@@ -468,8 +529,7 @@ Item {
 
             Connections{
                 target: second
-                onLoaded:{ if(GeneratorManager.generator3.randomValue > 20){
-                        console.log(1)
+                onLoaded:{ if(GeneratorManager.generator3.randomValue+3 > 20){
                         tempVol3.star = true
                     }
                     else
@@ -482,10 +542,10 @@ Item {
             anchors.bottom: tempVol3.top
             anchors.left: tempVol3.left
             anchors.leftMargin: -15
-             word :GeneratorManager.generator3.randomValue
+             word :GeneratorManager.generator3.randomValue+3
         }
 
-        Frame2.Sign{
+        Frame1.Sign{
             anchors.right: textOfVol3.left
             anchors.bottom: textOfVol3.bottom
             anchors.rightMargin: 5
@@ -530,6 +590,45 @@ Item {
                 anchors.left: parent.left
                 anchors.leftMargin: -30
             }
+
+            Connections{
+                target: GeneratorManager.generator3
+                onRandomValueChanged:{
+                    var pressure = (293*1000)/(GeneratorManager.generator3.randomValue+3)
+                    var p = pressure.toFixed(2)
+                    textOfPres3.word = p
+                    if(p > 35800){
+                        datPres3.star = true
+                        key3.rotation = 150
+                         key3.anchors.topMargin = -10
+                    }
+                    else{
+                        datPres3.star = false
+                        key3.rotation = 180
+                        key3.anchors.topMargin = 0
+
+                    }
+                }
+            }
+            Connections{
+                target: second
+                onLoaded:{
+                     var pressure = (293*1000)/(GeneratorManager.generator3.randomValue)
+                    var p = pressure.toFixed(2)
+                    textOfPres3.word = p
+                    if(p > 35800){
+                        datPres3.star = true
+                        key3.rotation = 150
+                         key3.anchors.topMargin = -10
+                    }
+                    else{
+                        datPres3.star = false
+                        key3.rotation = 180
+                        key3.anchors.topMargin = 0
+                    }
+
+                }
+            }
         }
         Frame2.TextOfPres {
             id: textOfPres3
@@ -537,7 +636,7 @@ Item {
             anchors.left: datPres3.left
             anchors.leftMargin: -10
         }
-        Frame2.Sign{
+        Frame1.Sign{
             anchors.right: textOfPres3.left
             anchors.bottom: textOfPres3.bottom
             anchors.rightMargin: 5
@@ -564,7 +663,6 @@ Item {
             anchors.left: key3.right
             anchors.top: hline14.top
         }
-
     }
     }
 }

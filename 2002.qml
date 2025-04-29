@@ -7,10 +7,11 @@ import QtQuick.Layouts 1.15
 
 import "./Lines" as Lines
 import "./Frame2" as Frame2
+import "./Frame1" as Frame1
 
 Item {
     id:src
-   Frame2.BackgroundMain{
+   Frame1.BackgroundMain{
    }
 
    Text{
@@ -84,7 +85,7 @@ Item {
         anchors.rightMargin: 17.5
     }
 
-    Frame2.Stok1{
+    Frame1.Stok1{
         anchors.bottom: vline2.top
         anchors.left: vline2.left
         anchors.leftMargin: -48
@@ -107,7 +108,7 @@ Item {
         anchors.right: coolpalet1.right
         anchors.rightMargin: 20
 
-        Frame2.Stok1{
+        Frame1.Stok1{
             id:stok1
             anchors.top: parent.bottom
             anchors.left: parent.left

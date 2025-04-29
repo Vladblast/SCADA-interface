@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 
 import "../Lines" as Lines
 import "../Frame2" as Frame2
+import "../Frame1" as Frame1
 
 Item{
     id:pres
@@ -29,7 +30,7 @@ Item{
         anchors.left: datPres.left
         anchors.leftMargin: -10
     }
-    Frame2.Sign{
+    Frame1.Sign{
         anchors.right: textOfPres1.left
         anchors.bottom: textOfPres1.bottom
         anchors.rightMargin: 5

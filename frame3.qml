@@ -5,6 +5,8 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
+import Generators 1.0
+
 import "./LibOfInterface" as LibOfInt
 import "./Frame2" as Frame2
 import "./Frame3" as Frame3
@@ -13,6 +15,29 @@ Item {
     id:frame3
     property int number3: 3
    LibOfInt.BackgroundMain{
+   }
+
+   Frame3.Startbtn {
+       id: start
+       anchors.bottom: parent.bottom
+       anchors.bottomMargin: 3
+       onClicked: {GeneratorManager.generator1.startTimer()
+           GeneratorManager.generator2.startTimer()
+           GeneratorManager.generator3.startTimer()
+       }
+   }
+
+   Frame3.Stop {
+       id: stop
+       anchors.left: start.right
+       anchors.leftMargin: 3
+       anchors.bottom: start.bottom
+       onClicked: {
+           GeneratorManager.generator1.stopTimer()
+           GeneratorManager.generator2.stopTimer()
+           GeneratorManager.generator3.stopTimer()
+
+       }
    }
 
    Text{
@@ -86,7 +111,7 @@ Item {
                link:"Vol.qml"
                Text{
                    anchors.centerIn: parent
-                   text: "Датчик температуры"
+                   text: "Уровнемер"
                }
            }
 

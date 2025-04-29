@@ -15,7 +15,10 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     qmlRegisterType<DataStore>("dataStore",1,0,"DataStore");
-    qmlRegisterType<Level>("Level",1,0,"Level");
+    qmlRegisterSingletonType<Level>("Level",1,0,"Level",
+      [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+        return new Level;
+    });
     qmlRegisterType<RandomGenerator>("Generators", 1, 0, "RandomGenerator");
     qmlRegisterSingletonType<RandomGeneratorManager>(
         "Generators", 1, 0, "GeneratorManager",

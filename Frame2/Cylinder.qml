@@ -5,6 +5,10 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
+import "../Frame1" as Frame1
+
+import Level 1.0
+
 
 Shape{
     id:cylinder
@@ -28,7 +32,6 @@ Shape{
         id:touch
         anchors.fill: cylinder
         onClicked: {
-            console.log(cylinder.x)
             if(frame2.windowCount < 2){
             info.x = cylinder.xx
             info.y = cylinder.yy
@@ -40,9 +43,23 @@ Shape{
         }
     }
 
-    Info{
+    Frame1.Info{
         id:info
-    }
+        TextField{
+            anchors.centerIn: parent
+            text: "Уровень воды: "+Level.currentLevel+"Л"
+            color: "white"
+            width: 160
+            readOnly: true
+            background: Rectangle{
+                anchors.fill: parent
+                color: "grey"
+                border.width: 2
+                border.color: "black"
+                }
+            }
+        }
+
 
     Connections{
         target:info

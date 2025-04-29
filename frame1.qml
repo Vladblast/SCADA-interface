@@ -23,22 +23,14 @@ Item {
     LibOfInt.BackgroundMain{
     }
 
-    Button{
-        id:btn
-        anchors.bottom: parent.bottom
-        onClicked: {GeneratorManager.generator1.startTimer()
-            GeneratorManager.generator2.startTimer()
-            GeneratorManager.generator3.startTimer()
-        }
-    }
-
     Text{
-        text: "Значения"+tank1.volume
+        text: "Значения"
         x:350
         y:10
         height: 20
         font.pixelSize: 30
     }
+
 
   Column{
       x:50

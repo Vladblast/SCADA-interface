@@ -44,6 +44,20 @@ Shape{
     }
     Info{
         id:info
+
+        TextField{
+            anchors.centerIn: parent
+            text: "Объем: "+9+ " Л"
+            color: "#f2f2f2"
+            width: 180
+            readOnly: true
+            background: Rectangle{
+                anchors.fill: parent
+                color: "grey"
+                border.width: 2
+                border.color: "black"
+            }
+        }
     }
 
     Connections{

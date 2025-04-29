@@ -9,6 +9,7 @@ import "SearchFieldFun.js" as SFun
 import "./Frame1" as Frame1
 
 import dataStore 1.0
+import Generators 1.0
 
 import "./LibOfInterface" as LibOfInt
 

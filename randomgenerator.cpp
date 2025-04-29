@@ -30,6 +30,11 @@ void RandomGenerator::startTimer()
     m_timer->start(m_interval);
 }
 
+void RandomGenerator::stopTimer()
+{
+    m_timer->stop();
+}
+
 void RandomGenerator::updateValue()
 {
     m_value = QRandomGenerator::global()->bounded(30);

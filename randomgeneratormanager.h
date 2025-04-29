@@ -11,9 +11,9 @@ class RandomGeneratorManager : public QObject
 public:
     explicit RandomGeneratorManager(QObject *parent = nullptr)
         : QObject(parent),
-          m_generator1(new RandomGenerator(1000, this)),
-          m_generator2(new RandomGenerator(1000, this)),
-          m_generator3(new RandomGenerator(1000, this))
+          m_generator1(new RandomGenerator(3000, this)),
+          m_generator2(new RandomGenerator(3000, this)),
+          m_generator3(new RandomGenerator(3000, this))
     {
     }
 

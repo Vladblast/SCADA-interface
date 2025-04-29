@@ -29,14 +29,9 @@ function search(value) {
        }
    }
    else{
-
        fourth.source = data.value
        second.source = ""
        first.source = ""
        third.source = ""
-
-
-
    }
-
 }

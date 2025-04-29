@@ -38,7 +38,6 @@ Shape{
             fifth.source = link
             first.source = ""
             second.source = ""
-            //third.source = ""
         }
     }
 }

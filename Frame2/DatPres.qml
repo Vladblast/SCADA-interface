@@ -5,6 +5,7 @@ import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
+import "../Frame1" as Frame1
 
 Rectangle{
     id:datPres
@@ -47,8 +48,64 @@ Rectangle{
         }
     }
 
-    Info{
+    Frame1.Info{
         id:info
+
+        Column{
+            padding: 10
+            spacing:10
+            anchors.fill: parent
+
+                TextField{
+                    text: "Максимальное значение:"
+                    color: "#f2f2f2"
+                    width: 190
+                    readOnly: true
+                    background: Rectangle{
+                        anchors.fill: parent
+                        color: "grey"
+                        border.width: 2
+                        border.color: "black"
+                    }
+                }
+
+                    TextField{
+                        text: 293000+ " Па"
+                        color: "#f2f2f2"
+                        width: 190
+                        readOnly: true
+                        background: Rectangle{
+                            anchors.fill: parent
+                            color: "grey"
+                            border.width: 2
+                            border.color: "black"
+                        }
+                }
+                TextField{
+                    text: "Минимальное значение:"
+                    color: "#f2f2f2"
+                    width: 190
+                    readOnly: true
+                    background: Rectangle{
+                        anchors.fill: parent
+                        color: "grey"
+                        border.width: 2
+                        border.color: "black"
+                    }
+                }
+                TextField{
+                    text: 8800 + " Па"
+                    color: "#f2f2f2"
+                    width: 190
+                    readOnly: true
+                    background: Rectangle{
+                        anchors.fill: parent
+                        color: "grey"
+                        border.width: 2
+                        border.color: "black"
+                    }
+                }
+    }
     }
 
     Connections{

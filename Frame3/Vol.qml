@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 
 import "../Lines" as Lines
 import "../Frame2" as Frame2
+import "../Frame1" as Frame1
 
 Item{
     id:vol
@@ -18,7 +19,7 @@ Item{
         yy:vol.x-100
 
         Text{
-            text: "Датчик Температуры"
+            text: "Уровнемер"
             anchors.top: parent.bottom
             anchors.topMargin: 4
             anchors.left: parent.left
@@ -31,7 +32,7 @@ Item{
         anchors.left: volDatch1.left
         anchors.leftMargin: -15
     }
-    Frame2.Sign{
+    Frame1.Sign{
         anchors.right: textOfVol1.left
         anchors.bottom: textOfVol1.bottom
         anchors.rightMargin: 5

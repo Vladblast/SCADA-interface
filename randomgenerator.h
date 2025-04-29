@@ -17,6 +17,7 @@ public:
     int interval() const;
     void setInterval(int newInterval);
     Q_INVOKABLE void startTimer();
+    Q_INVOKABLE void stopTimer();
 
 signals:
     void randomValueChanged();

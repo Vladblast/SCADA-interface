@@ -6,6 +6,7 @@ import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
 
 import "../Frame2" as Frame2
+import "../Frame1" as Frame1
 
 
 Shape{
@@ -36,8 +37,63 @@ Shape{
         }
     }
 
-    Frame2.Info{
+    Frame1.Info{
         id:info
+        Column{
+        padding: 10
+        spacing:10
+        anchors.fill: parent
+
+            TextField{
+                text: "Максимальное значение:"
+                color: "#f2f2f2"
+                width: 190
+                readOnly: true
+                background: Rectangle{
+                    anchors.fill: parent
+                    color: "grey"
+                    border.width: 2
+                    border.color: "black"
+                }
+            }
+
+                TextField{
+                    text: 33+ " Л"
+                    color: "#f2f2f2"
+                    width: 190
+                    readOnly: true
+                    background: Rectangle{
+                        anchors.fill: parent
+                        color: "grey"
+                        border.width: 2
+                        border.color: "black"
+                    }
+            }
+            TextField{
+                text: "Минимальное значение:"
+                color: "#f2f2f2"
+                width: 190
+                readOnly: true
+                background: Rectangle{
+                    anchors.fill: parent
+                    color: "grey"
+                    border.width: 2
+                    border.color: "black"
+                }
+            }
+            TextField{
+                text: 1 + " Л"
+                color: "#f2f2f2"
+                width: 190
+                readOnly: true
+                background: Rectangle{
+                    anchors.fill: parent
+                    color: "grey"
+                    border.width: 2
+                    border.color: "black"
+                }
+            }
+}
     }
 
     Connections{

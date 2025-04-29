@@ -87,14 +87,14 @@ Shape{
         id: info
 
         Column{
-            padding: 20
+            padding: 10
             spacing:20
             anchors.fill: parent
 
                 TextField{
                     text: "Объем: "+volume+ " Л"
                     color: "#f2f2f2"
-                    width: 160
+                    width: 180
                     readOnly: true
                     background: Rectangle{
                         anchors.fill: parent
@@ -106,7 +106,7 @@ Shape{
                 TextField{
                     text: "Температура: "+ temp + " C"
                     color: "#f2f2f2"
-                    width: 160
+                    width: 180
                     readOnly: true
                     background: Rectangle{
                         anchors.fill: parent
@@ -116,9 +116,9 @@ Shape{
                     }
                 }
                 TextField{
-                    text:"Давление: " + pressure + " Па"
+                    text:"Давление: " + (300*1000/volume).toFixed(2) + " Па"
                     color: "#f2f2f2"
-                    width: 160
+                    width: 180
                     readOnly: true
                     background: Rectangle{
                         anchors.fill: parent

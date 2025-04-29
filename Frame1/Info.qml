@@ -19,9 +19,19 @@ Window{
     flags: Qt.Dialog | Qt.WindowTitleHint | Qt.WindowCloseButtonHint | Qt.WindowStaysOnTopHint
 
     onClosing: {
+        switch(bottomPanel.frameNumber){
+        case 1:
         if(frame1.windowCount >= 1 ){
             frame1.windowCount-=1;
             console.log(frame1.windowCount)
         }
+        break
+        case 2:
+            if(frame2.windowCount >= 1 ){
+                frame2.windowCount-=1;
+                console.log(frame2.windowCount)
+            }
+
+    }
     }
 }

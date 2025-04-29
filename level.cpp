@@ -19,3 +19,8 @@ int Level::sumlevel(int a1, int a2, int a3)
     return currentLevel;
     }
 }
+
+int Level::getCurrentLevel()
+{
+  return currentLevel;
+}
