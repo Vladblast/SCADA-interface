@@ -25,12 +25,16 @@ Window {
     }
      LibOfInt.StartButton {
         id: start
-        onClicked: {
-            enter.x = parent.width/2-100
-            enter.y = parent.height/2-100
-            enter.visible = true
-        }
     }
+     Connections{
+         id:startbtn
+         target: start
+     onClicked: {
+         enter.x = main.width/2-100
+         enter.y = main.height/2-100
+         enter.visible = true
+     }
+     }
 
      LibOfInt.EnterWindow {
         id: enter

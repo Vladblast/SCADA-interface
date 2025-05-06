@@ -7,6 +7,7 @@ function parolChecked(parol){
         searchf.readOnly = false
         first.source = "frame1.qml"
         connectionsBottomPanel.workable = true
+        startbtn.enabled = false
 
 
     }else{
