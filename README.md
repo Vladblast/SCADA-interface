@@ -36,7 +36,7 @@ The project is organized as follows:
 - `LibOfInterface/`: Library of reusable interface components  
 - `BottomPanel.qml`: Navigation panel
 
-##Preview
+## Preview
 <br>
 <br>
 <img src="https://github.com/Vladblast/ScadaExample/blob/main/Example.gif"/>
