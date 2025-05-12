@@ -34,7 +34,12 @@ The project is organized as follows:
 - `main.qml`: Main application window  
 - `Frame1/`, `Frame2/`, `Frame3/`: Different frame components  
 - `LibOfInterface/`: Library of reusable interface components  
-- `BottomPanel.qml`: Navigation panel  
+- `BottomPanel.qml`: Navigation panel
+
+##Preview
+<br>
+<br>
+<img src="https://github.com/Vladblast/ScadaExample/blob/main/Example.gif"/>
 
 ## Features  
 - **Multiple Views**: The application offers different frames to display various types of information  
